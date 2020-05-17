@@ -53,7 +53,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Layout className="layout">
-            <Navbar></Navbar>
+            <Navbar isLoggedIn={isLoggedIn}></Navbar>
             {isLoggedIn ? (
               <Content style={{ padding: '0 50px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>

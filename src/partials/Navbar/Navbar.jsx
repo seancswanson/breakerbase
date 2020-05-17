@@ -11,14 +11,23 @@ class Navbar extends Component {
   }
 
   render() {
+    const { isLoggedIn } = this.props;
     return (
       <Header>
         <div className="logo">BreakHQ</div>
-        <Menu theme="dark" mode="horizontal">
-          <Menu.Item key="sessions">Sessions</Menu.Item>
-          <Menu.Item key="train">Train</Menu.Item>
-          <Menu.Item key="library">Library</Menu.Item>
-        </Menu>
+        {isLoggedIn ? (
+          <Menu theme="dark" mode="horizontal">
+            <Menu.Item key="sessions">Sessions</Menu.Item>
+            <Menu.Item key="train">Train</Menu.Item>
+            <Menu.Item key="library">Library</Menu.Item>
+          </Menu>
+        ) : (
+          <Menu theme="dark" mode="horizontal">
+            <Menu.Item key="about">About</Menu.Item>
+            <Menu.Item key="contribute">Contribute</Menu.Item>
+            <Menu.Item key="login">Log In</Menu.Item>
+          </Menu>
+        )}
       </Header>
     );
   }
