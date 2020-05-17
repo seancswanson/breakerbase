@@ -46,6 +46,12 @@ class App extends Component {
     '/move-library/edit': 'Edit Move',
   };
 
+  mockLogin = (type) => {
+    this.setState({
+      isLoggedIn: type === 'in' ? true : false,
+    });
+  };
+
   render() {
     const { isLoggedIn } = this.state;
 
@@ -53,7 +59,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Layout className="layout">
-            <Navbar isLoggedIn={isLoggedIn}></Navbar>
+            <Navbar isLoggedIn={isLoggedIn} mockLogin={this.mockLogin}></Navbar>
             {isLoggedIn ? (
               <Content style={{ padding: '0 50px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
