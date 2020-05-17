@@ -1,1 +1,10 @@
-@import "./scss/colors.scss"
+@import "./scss/reset.scss";
+@import "./scss/colors.scss";
+
+.App {
+  height: 100vh;
+}
+
+.layout {
+  height: 100%;
+}
