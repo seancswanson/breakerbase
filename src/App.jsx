@@ -7,11 +7,11 @@ import {
   withRouter,
 } from 'react-router-dom';
 
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb, Button } from 'antd';
 
-import './App.scss';
 import Navbar from './partials/Navbar/Navbar';
 import MyFooter from './partials/MyFooter/MyFooter';
+import './App.less';
 
 const { Content } = Layout;
 
@@ -41,6 +41,7 @@ function App() {
           </Breadcrumb>
           <div className="site-layout-content">Content</div>
         </Content>
+        <Button type="primary">Hello</Button>
         <MyFooter></MyFooter>
       </Layout>
     </div>
