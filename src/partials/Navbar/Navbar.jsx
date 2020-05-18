@@ -15,25 +15,25 @@ class Navbar extends Component {
   }
 
   render() {
-    const { isLoggedIn, mockLogin } = this.props;
+    const { isLoggedIn } = this.props;
     return (
       <Header>
-        <Link className="logo" to="/overview">
+        <Link className="logo" to={isLoggedIn ? '/app' : '/'}>
           BreakHQ
         </Link>
         {isLoggedIn ? (
           <Menu theme="dark" mode="horizontal">
             <Menu.Item key="sessions">
-              <Link to="session-log">Sessions</Link>
+              <Link to="/app/session-log">Sessions</Link>
             </Menu.Item>
             <Menu.Item key="train">
-              <Link to="trainer">Train</Link>
+              <Link to="/app/trainer">Train</Link>
             </Menu.Item>
             <Menu.Item key="library">
-              <Link to="move-library">Library</Link>
+              <Link to="/app/move-library">Library</Link>
             </Menu.Item>
             <Menu.Item key="profile">
-              <Link to="profile" onClick={() => mockLogin('out')}>
+              <Link to="/app">
                 <Avatar shape="square" icon={<UserOutlined />} />
               </Link>
             </Menu.Item>
@@ -47,9 +47,7 @@ class Navbar extends Component {
               <Link to="/contribute">Contribute</Link>
             </Menu.Item>
             <Menu.Item key="login">
-              <Link to="/login" onClick={() => mockLogin('in')}>
-                Log In
-              </Link>
+              <Link to="/login">Log In</Link>
             </Menu.Item>
           </Menu>
         )}

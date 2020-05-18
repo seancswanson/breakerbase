@@ -1,11 +1,12 @@
 // React imports
 import React, { Component } from 'react';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route,
   Switch,
   Link,
   withRouter,
+  useLocation,
 } from 'react-router-dom';
 
 // Ant Design imports
@@ -13,19 +14,20 @@ import { Layout, Menu, Breadcrumb, Button } from 'antd';
 
 // Components and Partials imports
 import Navbar from './partials/Navbar/Navbar';
-import Overview from './components/Overview/Overview';
-import SessionLog from './components/SessionLog/SessionLog';
-import Trainer from './components/Trainer/Trainer';
-import MoveLibrary from './components/MoveLibrary/MoveLibrary';
 import Landing from './components/Landing/Landing';
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
 import MyFooter from './partials/MyFooter/MyFooter';
+import PrivateRoute from './PrivateRoute';
+import { AuthContext } from './context/auth';
+import { browserHistory } from 'react-router';
 
 // Stylesheet import
 import './App.less';
 
-const { Content } = Layout;
-
+// ----------
 class App extends Component {
+  // ----------
   constructor() {
     super();
     this.state = {
@@ -33,55 +35,34 @@ class App extends Component {
     };
   }
 
-  breadcrumbNameMap = {
-    '/session-log': 'Session Log',
-    '/session-log/new': 'New Entry',
-    '/session-log/edit': 'Edit Entry',
-    '/trainer': 'Drill Builder',
-    '/trainer/new': 'New Drill',
-    '/trainer/edit': 'Edit Drill',
-    '/trainer/generate': 'Generate Drill',
-    '/move-library': 'Move Library',
-    '/move-library/new': 'New Move',
-    '/move-library/edit': 'Edit Move',
-  };
-
+  // ----------
   mockLogin = (type) => {
     this.setState({
       isLoggedIn: type === 'in' ? true : false,
     });
   };
 
+  // ----------
   render() {
     const { isLoggedIn } = this.state;
 
     return (
-      <Router>
-        <div className="App">
-          <Layout className="layout">
-            <Navbar isLoggedIn={isLoggedIn} mockLogin={this.mockLogin}></Navbar>
-            {isLoggedIn ? (
-              <Content style={{ padding: '0 50px' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
-                  <Breadcrumb.Item>Home</Breadcrumb.Item>
-                  <Breadcrumb.Item>List</Breadcrumb.Item>
-                  <Breadcrumb.Item>App</Breadcrumb.Item>
-                </Breadcrumb>
-                <Switch>
-                  <Route path="/overview" component={Overview} />
-                  <Route path="/session-log" component={SessionLog} />
-                  <Route path="/trainer" component={Trainer} />
-                  <Route path="/move-library" component={MoveLibrary} />
-                </Switch>
-              </Content>
-            ) : (
-              <Landing></Landing>
-            )}
-            {/* <div className="site-layout-content">Content</div> */}
-            <MyFooter></MyFooter>
-          </Layout>
-        </div>
-      </Router>
+      <AuthContext.Provider value={false}>
+        <Router>
+          <div className="App">
+            <Layout className="layout">
+              <Navbar isLoggedIn={isLoggedIn}></Navbar>
+              <Route exact path="/" component={Landing} />
+              <Route
+                path="/login"
+                component={() => <Login mockLogin={this.mockLogin} />}
+              />
+              <PrivateRoute path="/app" component={Home} />
+              <MyFooter></MyFooter>
+            </Layout>
+          </div>
+        </Router>
+      </AuthContext.Provider>
     );
   }
 }

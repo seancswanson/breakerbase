@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Button } from 'antd';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +8,21 @@ class Login extends Component {
   }
 
   render() {
-    return <div>Login</div>;
+    const { mockLogin } = this.props;
+
+    return (
+      <div>
+        Login!!{' '}
+        <Button
+          type="primary"
+          onClick={() => {
+            mockLogin('in');
+          }}
+        >
+          Log In
+        </Button>
+      </div>
+    );
   }
 }
 
