@@ -13,7 +13,7 @@ import {
 import { Layout, Menu, Breadcrumb, Button } from 'antd';
 
 // Components and Partials imports
-import Navbar from './partials/Navbar/Navbar';
+import NavbarWithRouter from './partials/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
@@ -47,11 +47,11 @@ class App extends Component {
     const { isLoggedIn } = this.state;
 
     return (
-      <AuthContext.Provider value={false}>
+      <AuthContext.Provider value={true}>
         <Router>
           <div className="App">
             <Layout className="layout">
-              <Navbar isLoggedIn={isLoggedIn}></Navbar>
+              <NavbarWithRouter isLoggedIn={isLoggedIn}></NavbarWithRouter>
               <Route exact path="/" component={Landing} />
               <Route
                 path="/login"
