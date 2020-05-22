@@ -15,13 +15,15 @@ class Landing extends Component {
         <Row className="hero-container" justify="center" align="middle">
           <Col className="hero-wrapper" span={16} offset={-2}>
             <Row>
-              <Title>BreakerBase</Title>
+              <Title>breakerbase</Title>
             </Row>
             <Row>
-              <Title level={2}>Your 21st century training companion.</Title>
+              <Title level={2}>The 21st century training companion.</Title>
             </Row>
             <Row gutter={[0, 18]}>
-              <Text strong>Train smarter. Dance better. Rock the cypher.</Text>
+              <Text strong>
+                Train smarter. Track progress. Rock the cypher.
+              </Text>
             </Row>
             <Row>
               <Button type="primary">Create a Free Account</Button>

@@ -7,8 +7,14 @@
     url('https://www.transparenttextures.com/patterns/subtle-dots.png') center
     center repeat;
     background-color: #f3f3f3;
-    background-size: contain, 30px;
+    background-size: 100%, 30px;
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+    h1
+    {
+        font-size: 50px;
+        font-variant: small-caps;
+    }
 }
 
 .hero-wrapper
@@ -19,4 +25,16 @@
 .hero-container
 {
     background: rgba(255, 255, 255, .75);
+}
+
+.user-form-wrapper .ant-card
+{
+    width: 50vw;
+
+    box-shadow: @shadow-1-right;
+
+    @media (max-width: 775px)
+    {
+        width: 85vw;
+    }
 }

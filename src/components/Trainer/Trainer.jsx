@@ -32,7 +32,7 @@ class Trainer extends Component {
             </SubMenu>
           </Menu>
         </Sider>
-        <Layout style={{ padding: '0 24px 24px' }}>SessionLog</Layout>
+        <Layout style={{ padding: '0 24px 24px' }}>Trainer</Layout>
       </Layout>
     );
   }

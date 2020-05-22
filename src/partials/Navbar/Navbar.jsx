@@ -39,13 +39,13 @@ class Navbar extends Component {
           {(onLinkClick) => (
             <Menu>
               <Menu.Item key="/app/session-log">
-                <Link to="/app/session-log">Sessions</Link>
+                <Link to="/app/session-log">Session Log</Link>
               </Menu.Item>
               <Menu.Item key="/app/trainer">
-                <Link to="/app/trainer">Train</Link>
+                <Link to="/app/trainer">Trainer</Link>
               </Menu.Item>
               <Menu.Item key="/app/move-library">
-                <Link to="/app/move-library">Library</Link>
+                <Link to="/app/move-library">Move Library</Link>
               </Menu.Item>
               <Menu.Item key="/app/profile">
                 <Link to="/app/profile">
