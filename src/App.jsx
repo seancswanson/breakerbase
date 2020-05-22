@@ -17,6 +17,7 @@ import NavbarWithRouter from './partials/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 import MyFooter from './partials/MyFooter/MyFooter';
 import PrivateRoute from './PrivateRoute';
 import { AuthContext } from './context/auth';
@@ -43,6 +44,13 @@ class App extends Component {
   };
 
   // ----------
+  mockSignup = (type) => {
+    this.setState({
+      isLoggedIn: type === 'in' ? true : false,
+    });
+  };
+
+  // ----------
   render() {
     const { isLoggedIn } = this.state;
 
@@ -56,6 +64,10 @@ class App extends Component {
               <Route
                 path="/login"
                 component={() => <Login mockLogin={this.mockLogin} />}
+              />
+              <Route
+                path="/signup"
+                component={() => <Signup mockLogin={this.mockSignup} />}
               />
               <PrivateRoute path="/app" component={Home} />
               <MyFooter></MyFooter>

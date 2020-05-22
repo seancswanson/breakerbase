@@ -18,7 +18,7 @@ const tailLayout = {
   },
 };
 
-class Login extends Component {
+class Signup extends Component {
   constructor(props) {
     super(props);
 
@@ -26,7 +26,7 @@ class Login extends Component {
   }
 
   render() {
-    const { mockLogin } = this.props;
+    const { mockSignup } = this.props;
 
     const onFinish = (values) => {
       console.log('Success:', values);
@@ -46,7 +46,7 @@ class Login extends Component {
         }}
         class="user-form-wrapper"
       >
-        <Card title="Log In">
+        <Card title="Create an Account">
           <Form
             {...layout}
             name="basic"
@@ -83,8 +83,17 @@ class Login extends Component {
               <Input.Password />
             </Form.Item>
 
-            <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-              <Checkbox>Remember me</Checkbox>
+            <Form.Item
+              label="Confirm Password"
+              name="password-confirm"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please repeat your password!',
+                },
+              ]}
+            >
+              <Input.Password />
             </Form.Item>
 
             <Form.Item {...tailLayout}>
@@ -92,13 +101,13 @@ class Login extends Component {
                 type="primary"
                 htmlType="submit"
                 onClick={() => {
-                  mockLogin('in');
+                  mockSignup('in');
                 }}
               >
-                Sign In
+                Sign Up
               </Button>
             </Form.Item>
-            <Link to="/signup">Don't have an account?</Link>
+            <Link to="/login">Already have an account?</Link>
           </Form>
         </Card>
       </div>
@@ -106,4 +115,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Signup;
