@@ -18,7 +18,6 @@ import Landing from './components/Landing/Landing';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
-import MyFooter from './partials/MyFooter/MyFooter';
 import PrivateRoute from './PrivateRoute';
 import { AuthContext } from './context/auth';
 import { browserHistory } from 'react-router';
@@ -70,7 +69,6 @@ class App extends Component {
                 component={() => <Signup mockLogin={this.mockSignup} />}
               />
               <PrivateRoute path="/app" component={Home} />
-              <MyFooter></MyFooter>
             </Layout>
           </div>
         </Router>

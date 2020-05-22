@@ -26,7 +26,7 @@ class Navbar extends Component {
     return (
       <Header>
         <Link className="logo" to={isLoggedIn ? '/app' : '/'}>
-          BreakHQ
+          BreakerBase
         </Link>
         <ResponsiveAntMenu
           activeLinkKey={location.pathname}

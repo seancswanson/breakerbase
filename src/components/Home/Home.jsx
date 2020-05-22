@@ -6,9 +6,11 @@ import Overview from '../Overview/Overview';
 import SessionLog from '../SessionLog/SessionLog';
 import Trainer from '../Trainer/Trainer';
 import MoveLibrary from '../MoveLibrary/MoveLibrary';
+import MyFooter from '../../partials/MyFooter/MyFooter';
 
 const { Content } = Layout;
 
+// ----------
 function Home() {
   // Will be able to use this if I convert App to a function component.
   // location = useLocation();
@@ -37,8 +39,9 @@ function Home() {
   //   );
   // });
 
+  // ----------
   return (
-    <Content style={{ padding: '0 50px' }}>
+    <Content className="app-content-body-wrapper">
       <Breadcrumb style={{ margin: '16px 0' }}>
         <Breadcrumb.Item>Home</Breadcrumb.Item>
         <Breadcrumb.Item>List</Breadcrumb.Item>
@@ -50,7 +53,7 @@ function Home() {
         <Route path="/app/trainer" component={Trainer} />
         <Route path="/app/move-library" component={MoveLibrary} />
       </Switch>{' '}
-      {/* <div className="site-layout-content">Content</div> */}
+      <MyFooter></MyFooter>
     </Content>
   );
 }
