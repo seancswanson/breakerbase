@@ -22,7 +22,11 @@ class SessionLog extends Component {
             mode="inline"
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
-            style={{ height: '100%', borderRight: 0 }}
+            style={{
+              height: '100%',
+              borderRight: 0,
+            }}
+            className="session-sidebar-menu-wrapper"
           >
             <SubMenu key="sub1" title="subnav 1">
               <Menu.Item key="1">option1</Menu.Item>
