@@ -106,7 +106,7 @@ ResponsiveAntMenu.propTypes = {
   popoverTrigger: (0, _propTypes.oneOf)(['click', 'hover', 'focus'])
 };
 ResponsiveAntMenu.defaultProps = {
-  mobileBreakPoint: 575,
+  mobileBreakPoint: 645,
   throttleViewportChange: 250,
   placement: 'bottom',
   closeOnClick: true,
