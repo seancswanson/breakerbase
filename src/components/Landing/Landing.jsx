@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Row, Col, Typography } from 'antd';
 const { Title, Text } = Typography;
 
@@ -26,7 +27,9 @@ class Landing extends Component {
               </Text>
             </Row>
             <Row>
-              <Button type="primary">Create a Free Account</Button>
+              <Link to="/signup">
+                <Button type="primary">Create a Free Account</Button>
+              </Link>
             </Row>
           </Col>
         </Row>

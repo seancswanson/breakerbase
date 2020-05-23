@@ -30,10 +30,23 @@ class App extends Component {
   // ----------
   constructor() {
     super();
+    const existingTokens = JSON.parse(localStorage.getItem('tokens'));
+
     this.state = {
       isLoggedIn: false,
+      authTokens: existingTokens,
     };
   }
+
+  // ----------
+  setTokens = (data) => {
+    localStorage.setItem('tokens', JSON.stringify(data));
+    this.setState({
+      authTokens: data,
+    });
+
+    this.mockLogin('in');
+  };
 
   // ----------
   mockLogin = (type) => {
@@ -51,10 +64,10 @@ class App extends Component {
 
   // ----------
   render() {
-    const { isLoggedIn } = this.state;
+    const { isLoggedIn, authTokens } = this.state;
 
     return (
-      <AuthContext.Provider value={true}>
+      <AuthContext.Provider value={{ authTokens, setTokens: this.setTokens }}>
         <Router>
           <div className="App">
             <Layout className="layout">

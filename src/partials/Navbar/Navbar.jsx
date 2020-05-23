@@ -5,57 +5,60 @@ import { Link } from 'react-router-dom';
 import ResponsiveAntMenu from './ResponsiveAntMenu';
 import { Avatar, Layout, Menu } from 'antd';
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
+import { useAuth } from '../../context/auth';
 
 import 'antd/lib/menu/style/css';
 import 'antd/lib/popover/style/css';
-import { UserOutlined } from '@ant-design/icons';
+import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
 import Login from '../../components/Login/Login';
 
 const { Header } = Layout;
 
-class Navbar extends Component {
-  constructor(props) {
-    super(props);
+function Navbar(props) {
+  const { isLoggedIn, location } = props;
+  const { setTokens } = useAuth();
 
-    this.state = {};
-  }
-
-  render() {
-    const { isLoggedIn, location } = this.props;
-    console.log(this);
-    return (
-      <Header>
-        <Link className="logo" to={isLoggedIn ? '/app' : '/'}>
-          BreakerBase
-        </Link>
-        <ResponsiveAntMenu
-          activeLinkKey={location.pathname}
-          theme="dark"
-          mobileMenuContent={(isMenuShown) =>
-            isMenuShown ? <CloseOutlined /> : <MenuOutlined />
-          }
-          menuClassName={'responsive-ant-menu'}
-        >
-          {(onLinkClick) => (
-            <Menu>
-              <Menu.Item key="/app/session-log">
-                <Link to="/app/session-log">Session Log</Link>
-              </Menu.Item>
-              <Menu.Item key="/app/trainer">
-                <Link to="/app/trainer">Trainer</Link>
-              </Menu.Item>
-              <Menu.Item key="/app/move-library">
-                <Link to="/app/move-library">Move Library</Link>
-              </Menu.Item>
-              <Menu.Item key="/app/profile">
-                <Link to="/app/profile">
-                  <Avatar shape="square" icon={<UserOutlined />} />
-                </Link>
-              </Menu.Item>
-            </Menu>
-          )}
-        </ResponsiveAntMenu>
-        {/* {isLoggedIn ? (
+  console.log(this);
+  return (
+    <Header>
+      <Link className="logo" to={isLoggedIn ? '/app' : '/'}>
+        BreakerBase
+      </Link>
+      <ResponsiveAntMenu
+        activeLinkKey={location.pathname}
+        theme={() => 'dark'}
+        mobileMenuContent={(isMenuShown) =>
+          isMenuShown ? <CloseOutlined /> : <MenuOutlined />
+        }
+        menuClassName={'responsive-ant-menu'}
+      >
+        {(onLinkClick) => (
+          <Menu>
+            <Menu.Item key="/app/session-log">
+              <Link to="/app/session-log">Session Log</Link>
+            </Menu.Item>
+            <Menu.Item key="/app/trainer">
+              <Link to="/app/trainer">Trainer</Link>
+            </Menu.Item>
+            <Menu.Item key="/app/move-library">
+              <Link to="/app/move-library">Move Library</Link>
+            </Menu.Item>
+            <Menu.Item key="/app/profile">
+              <Link to="/app/profile">
+                <Avatar shape="square" icon={<UserOutlined />} />
+              </Link>
+            </Menu.Item>
+            <Menu.Item
+              onClick={() => {
+                setTokens();
+              }}
+            >
+              <LogoutOutlined />
+            </Menu.Item>
+          </Menu>
+        )}
+      </ResponsiveAntMenu>
+      {/* {isLoggedIn ? (
           <Menu theme="dark" mode="horizontal">
             <Menu.Item key="sessions">
               <Link to="/app/session-log">Sessions</Link>
@@ -85,9 +88,9 @@ class Navbar extends Component {
             </Menu.Item>
           </Menu>
         )} */}
-      </Header>
-    );
-  }
+    </Header>
+  );
 }
+
 const NavbarWithRouter = withRouter(Navbar);
 export default NavbarWithRouter;

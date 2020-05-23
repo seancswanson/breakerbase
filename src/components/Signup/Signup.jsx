@@ -44,7 +44,7 @@ class Signup extends Component {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        class="user-form-wrapper"
+        className="user-form-wrapper"
       >
         <Card title="Create an Account">
           <Form
