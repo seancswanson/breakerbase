@@ -124,13 +124,14 @@ input
 // My own global styles
 // ********************
 
+
 @font-face
 {
-    font-family: 'archivo';
+    font-family: 'poppins';
     font-weight: normal;
     font-style: normal;
 
-    src: url('assets/fonts/Archivo/Archivo-Regular.ttf') format('truetype');
+    src: url('assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
 }
 
 @font-face
@@ -206,6 +207,11 @@ h1,
 h2
 {
     font-family: 'archivo';
+}
+
+p
+{
+    font-family: 'poppins';
 }
 
 .bolder

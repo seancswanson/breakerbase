@@ -1,4 +1,62 @@
 :host
 {
+    font-family: 'archivo';
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 5px;
+
     background: #313131;
+}
+
+.footer-left
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a
+    {
+        line-height: 40px;
+
+        height: 100%;
+        padding: 0 5px;
+
+        text-decoration: none;
+
+        color: #fff;
+    }
+}
+
+.footer-right
+{
+    display: flex;
+    justify-content: space-between;
+
+    width: 108px;
+
+    a
+    {
+        padding: 0 7px;
+
+        .social-icon
+        {
+            width: 40px;
+            height: 100%;
+
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 85%;
+
+            &.twitter
+            {
+                background-image: url('../../assets/icons/twitter.png');
+            }
+            &.github
+            {
+                background-image: url('../../assets/icons/github.png');
+            }
+        }
+    }
 }

@@ -3,17 +3,21 @@
     font-family: 'archivo';
 
     display: flex;
+    justify-content: space-between;
 
     background: #313131;
 }
 
-.nav-brand-container
+.header-wrapper
 {
     display: flex;
     align-items: center;
     justify-content: center;
     a
     {
+        line-height: 64px;
+
+        height: 100%;
         padding: 0 10px;
 
         text-decoration: none;

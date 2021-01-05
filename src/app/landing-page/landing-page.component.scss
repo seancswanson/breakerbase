@@ -24,6 +24,15 @@
     }
 }
 
+.graphic-pane
+{
+    background: url('../../assets/landing-bg.png') no-repeat center,
+    url('https://www.transparenttextures.com/patterns/subtle-dots.png') center
+    center repeat;
+    background-color: #f3f3f3;
+    background-size: 140%, 30px;
+}
+
 h1
 {
     font-size: 26px;
