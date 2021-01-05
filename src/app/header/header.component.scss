@@ -1,0 +1,23 @@
+:host
+{
+    font-family: 'archivo';
+
+    display: flex;
+
+    background: #313131;
+}
+
+.nav-brand-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a
+    {
+        padding: 0 10px;
+
+        text-decoration: none;
+
+        color: #fff;
+    }
+}

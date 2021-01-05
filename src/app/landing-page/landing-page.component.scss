@@ -1,4 +1,41 @@
-app-landing-page
+:host
 {
+    font-family: 'archivo';
+
     display: grid;
+
+    height: 100%;
+
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+}
+
+.entry-pane
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+    *
+    {
+        margin-bottom: 10px;
+    }
+}
+
+h1
+{
+    font-size: 26px;
+    font-weight: normal;
+}
+
+h2
+{
+    font-size: 20px;
+}
+
+p
+{
+    font-size: 18px;
 }

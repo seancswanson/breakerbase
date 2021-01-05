@@ -120,8 +120,95 @@ input
     -webkit-appearance: none;
 }
 
+// ********************
+// My own global styles
+// ********************
+
+@font-face
+{
+    font-family: 'archivo';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('assets/fonts/Archivo/Archivo-Regular.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'archivo';
+    font-weight: 500;
+    font-style: normal;
+
+    src: url('assets/fonts/Archivo/Archivo-Medium.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'archivo';
+    font-weight: 500;
+    font-style: italic;
+
+    src: url('assets/fonts/Archivo/Archivo-MediumItalic.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'archivo';
+    font-weight: normal;
+    font-style: italic;
+
+    src: url('assets/fonts/Archivo/Archivo-Italic.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'archivo';
+    font-weight: bold;
+    font-style: normal;
+
+    src: url('assets/fonts/Archivo/Archivo-SemiBold.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'archivo';
+    font-weight: bold;
+    font-style: italic;
+
+    src: url('assets/fonts/Archivo/Archivo-SemiBoldItalic.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'archivo';
+    font-weight: bolder;
+    font-style: normal;
+
+    src: url('assets/fonts/Archivo/Archivo-Bold.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'archivo';
+    font-weight: bolder;
+    font-style: italic;
+
+    src: url('assets/fonts/Archivo/Archivo-BoldItalic.ttf') format('truetype');
+}
+
 body
 {
     width: 100vw;
     min-height: 100vh;
+}
+
+h1,
+h2
+{
+    font-family: 'archivo';
+}
+
+.bolder
+{
+    font-weight: bolder;
 }
