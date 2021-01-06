@@ -134,6 +134,16 @@ input
     src: url('assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
 }
 
+
+@font-face
+{
+    font-family: 'archivo';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('assets/fonts/Archivo/Archivo-Regular.ttf') format('truetype');
+}
+
 @font-face
 {
     font-family: 'archivo';
@@ -207,7 +217,7 @@ h1,
 h2
 {
     font-family: 'archivo';
-    font-weight: normal;
+    font-weight: 500;
 }
 
 p
@@ -217,7 +227,7 @@ p
 
 .bolder
 {
-    font-weight: bolder;
+    font-weight: 600;
 }
 
 .btn
