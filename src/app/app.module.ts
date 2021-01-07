@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { JoinPageComponent } from './join-page/join-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    JoinPageComponent
   ],
   imports: [
     BrowserModule,
