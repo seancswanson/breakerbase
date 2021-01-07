@@ -7,6 +7,10 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { JoinPageComponent } from './join-page/join-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { SessionLogComponent } from './session-log/session-log.component';
+import { TrainerComponent } from './trainer/trainer.component';
+import { SkillLibraryComponent } from './skill-library/skill-library.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { JoinPageComponent } from './join-page/join-page.component';
     LandingPageComponent,
     HeaderComponent,
     FooterComponent,
-    JoinPageComponent
+    JoinPageComponent,
+    LoginPageComponent,
+    SessionLogComponent,
+    TrainerComponent,
+    SkillLibraryComponent
   ],
   imports: [
     BrowserModule,

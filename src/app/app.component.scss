@@ -7,16 +7,27 @@
     min-height: 100vh;
 
     grid-template-columns: 100%;
-    grid-template-rows: 64px 100% 300px;
+    grid-template-rows: 64px 93% 300px;
 }
 
 main
 {
+    position: relative;
+
     background: url('../assets/landing-bg-crop.png') no-repeat right,
     url('https://www.transparenttextures.com/patterns/subtle-dots.png') center
     center repeat;
     background-color: #f3f3f3;
     background-size: contain, 30px;
+
+    .bg-watermark
+    {
+        position: absolute;
+        right: 35px;
+        bottom: 0;
+
+        opacity: .03;
+    }
 
     @media (max-width: 620px)
     {
