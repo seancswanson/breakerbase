@@ -11,10 +11,15 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { SessionLogComponent } from './session-log/session-log.component';
 import { TrainerComponent } from './trainer/trainer.component';
 import { SkillLibraryComponent } from './skill-library/skill-library.component';
-import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import {
+  NgZorroAntdModule,
+  NZ_I18N,
+  en_US,
+  NzTagModule,
+  NzFormModule,
+} from 'ng-zorro-antd';
 import { NzTableModule } from 'ng-zorro-antd/table';
-
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
@@ -32,18 +37,21 @@ registerLocaleData(en);
     LoginPageComponent,
     SessionLogComponent,
     TrainerComponent,
-    SkillLibraryComponent
+    SkillLibraryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgZorroAntdModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NzTableModule
+    NzTableModule,
+    NzTagModule,
+    NzFormModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
