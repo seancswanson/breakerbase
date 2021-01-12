@@ -6,7 +6,8 @@ import {
   FormsModule,
   Validators,
 } from '@angular/forms';
-import {RetypeConfirm} from './check-password.validator';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RetypeConfirm } from './check-password.validator';
 
 @Component({
   selector: 'app-register-page',
@@ -23,14 +24,16 @@ export class RegisterPageComponent implements OnInit {
     'agree': new FormControl('', { validators: [Validators.required] })
   })
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   submitForm() {
     console.log('Submitted! And the form is ', this.registerForm.valid);
-    console.log(this.registerForm.value)
+    console.log(this.registerForm.value);
+    this.router.navigate(['/session-log']);
   }
 
   updateConfirmValidator(): void {

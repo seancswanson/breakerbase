@@ -6,6 +6,7 @@ import {
   FormsModule,
   Validators,
 } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -19,14 +20,16 @@ loginForm = new FormGroup({
   'password': new FormControl([''], {validators: [Validators.required]}),
   })
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   submitForm() {
-    console.log('Submitted!');
-    console.log(this.loginForm.value)
+    console.log('Submitted! And the form is ', this.loginForm.valid);
+    console.log(this.loginForm.value);
+    this.router.navigate(['/session-log']);
   }
 
 }
