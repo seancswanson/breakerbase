@@ -6,16 +6,17 @@ import {
   FormsModule,
   Validators,
 } from '@angular/forms';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
+
 export class LoginPageComponent implements OnInit {
 loginForm = new FormGroup({
-  'userName': new FormControl(null, {validators: [Validators.required]}),
-  'password': new FormControl(null, {validators: [Validators.required]}),
-  'remember': new FormControl(null, {validators: []}),
+  'email': new FormControl([''], {validators: [Validators.required]}),
+  'password': new FormControl([''], {validators: [Validators.required]}),
   })
 
   constructor() { }
