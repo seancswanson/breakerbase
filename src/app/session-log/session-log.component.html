@@ -1,24 +1,29 @@
 <div class="feature-wrapper">
-  <nz-table #sessionLogTable [nzData]="data">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Location</th>
-        <th>Tags</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let data of sessionLogTable.data">
-        <td>{{data.date}}</td>
-        <td>{{data.location}}</td>
-          <td><nz-tag *ngFor="let tag of data.tags">{{tag}}</nz-tag></td>
-        <td>
-          <a>Edit</a>
-          <nz-divider nzType="vertical"></nz-divider>
-          <a>Delete</a>
-        </td>
-      </tr>
-    </tbody>
-  </nz-table>
+  <nz-card nzTitle="Session Log">
+    <h1>Session Log</h1>
+    <nz-table #sessionLogTable [nzData]="data">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Tags</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of sessionLogTable.data">
+          <td>{{ data.date }}</td>
+          <td>{{ data.location }}</td>
+          <td>
+            <nz-tag *ngFor="let tag of data.tags">{{ tag }}</nz-tag>
+          </td>
+          <td>
+            <a>Edit</a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <a>Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-card>
 </div>
