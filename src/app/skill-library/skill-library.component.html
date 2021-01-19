@@ -2,6 +2,12 @@
   <nz-card nzTitle="Skill Library">
     <h1>Dive deeper into your practice and learn from the community.</h1>
     <nz-divider nzOrientation="left" nzText="History"></nz-divider>
+    <div class="videos-container">
+      <div class="video-wrapper" *ngFor="let video of videos">
+        <p>{{video.title}}</p>
+        <iframe [src]="video.videoUrl" frameborder="0"></iframe>
+      </div>
+    </div>
 
     <nz-divider nzOrientation="left" nzText="Top Rock"></nz-divider>
 
