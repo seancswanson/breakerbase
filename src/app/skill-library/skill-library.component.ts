@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 export class SkillLibraryComponent implements OnInit {
   videos: Video[] = [];
+  isLoading: Boolean = true;
 
   constructor(private youtube: YoutubeService, private sanitizer: DomSanitizer) {
     youtube.getVideos('bboy history').subscribe((response) => {
@@ -28,6 +29,10 @@ export class SkillLibraryComponent implements OnInit {
           thumbnail: item.snippet.thumbnails.high.url
         };
       });
+    },(err) => {
+      console.log(err)
+    }, () => {
+      this.isLoading = false;
     })
   }
 

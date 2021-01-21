@@ -15,7 +15,7 @@ export class YoutubeService {
   constructor(private http: HttpClient) { }
 
   getVideos(query: string): Observable<any> {
-    const url = `${this.API_URL}?q=${query}&key=${this.API_TOKEN}&part=snippet&type=video&maxResults=10`;
+    const url = `${this.API_URL}?q=${query}&key=${this.API_TOKEN}&modestbranding=1&part=snippet&type=video&maxResults=5`;
     return this.http.get(url)
       .pipe(
         map((response: any) => response.items)
