@@ -82,6 +82,7 @@ main
 
 body
 {
+    font-family: 'poppins';
     line-height: 1;
 }
 
@@ -123,7 +124,6 @@ input
 // My own global styles
 // ********************
 
-
 @font-face
 {
     font-family: 'poppins';
@@ -132,7 +132,6 @@ input
 
     src: url('assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
 }
-
 
 @font-face
 {
@@ -264,11 +263,27 @@ p
 
 .feature-wrapper
 {
-    width: 100%;
+    width: 90%;
     height: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
 
-    background: url('https://www.transparenttextures.com/patterns/subtle-dots.png') center
-    center repeat;
-    background-color: rgba(255,255,255,.95);
+    background: url('https://www.transparenttextures.com/patterns/subtle-dots.png')
+    center center repeat;
     background-size: 30px;
+}
+nzcollapsepanel
+{
+    &.ant-collapse-item
+    {
+        margin-bottom: 5px;
+
+        border-bottom: none;
+    }
+
+    .ant-collapse-header
+    {
+        color: #fff;
+        background: #313131;
+    }
 }

@@ -19,7 +19,8 @@ import {
   NzCardModule,
   NzToolTipModule,
   NzGridModule,
-  NzSpinModule
+  NzSpinModule,
+  NzCollapseModule,
 } from 'ng-zorro-antd';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -57,7 +58,8 @@ registerLocaleData(en);
     NzCardModule,
     NzToolTipModule,
     NzGridModule,
-    NzSpinModule
+    NzSpinModule,
+    NzCollapseModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

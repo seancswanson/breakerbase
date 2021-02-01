@@ -7,7 +7,12 @@
     min-height: 100vh;
 
     grid-template-columns: 100%;
-    grid-template-rows: 64px 93% 300px;
+    grid-template-rows: 64px 1fr 300px;
+
+    @media (max-width: 620px)
+    {
+        grid-template-rows: 64px 1fr 300px;
+    }
 }
 
 main

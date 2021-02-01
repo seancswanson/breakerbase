@@ -1,30 +1,53 @@
 <div class="feature-wrapper">
   <nz-card nzTitle="Skill Library">
-    <h1>Dive deeper into your practice and learn from the community.</h1>
-    <nz-divider nzOrientation="left" nzText="History"></nz-divider>
-    <div class="scroll-container">
-      <div class="videos-container">
-        <div class="video-wrapper" *ngFor="let video of videos">
-          <p>{{ video.title }}</p>
-          <div class="iframe-wrapper">
-            <iframe
-              *ngIf="video.videoUrl"
-              class="video-iframe"
-              [src]="video.videoUrl"
-              frameborder="0"
-            ></iframe>
+    <!-- <nz-divider nzOrientation="left" nzText="History & Context"></nz-divider> -->
+    <nz-collapse nzAccordion [nzBordered]="false">
+      <h1>Dive deeper into your practice and learn from the community.</h1>
+      <h2>
+        Select a topic below to see some curated videos and definitions to help
+        guide your next practice.
+      </h2>
+      <nz-collapse-panel
+        #p
+        *ngFor="let panel of panels; let isFirst = first"
+        [nzHeader]="panel.name"
+        [nzActive]="panel.active"
+      >
+        <h3>{{ panel.subtitle }}</h3>
+        <p *ngIf="panel.subtitleCredit === 'redbull'">
+          From RedBull's
+          <a
+            href="https://www.redbull.com/us-en/understand-the-basic-elements-of-breaking"
+            >Understand the Basic Elements of Breaking</a
+          >
+          article.
+        </p>
+
+        <p *ngIf="panel.subtitleCredit === 'steezy'">
+          From STEEZY.CO's
+          <a href="https://www.steezy.co/posts/what-is-dance-musicality"
+            >What is dance musicality?</a
+          >
+          article.
+        </p>
+
+        <div class="scroll-container">
+          <div class="videos-container">
+            <div class="video-wrapper" *ngFor="let video of videos">
+              <h2 class="video-title">{{ video.title }}</h2>
+              <div class="iframe-wrapper">
+                <iframe
+                  *ngIf="video.videoUrl"
+                  class="video-iframe"
+                  [src]="video.videoUrl"
+                  frameborder="0"
+                ></iframe>
+              </div>
+              <nz-spin *ngIf="isLoading" nzSimple></nz-spin>
+            </div>
           </div>
-          <nz-spin *ngIf="isLoading" nzSimple></nz-spin>
         </div>
-      </div>
-    </div>
-
-    <nz-divider nzOrientation="left" nzText="Top Rock"></nz-divider>
-
-    <nz-divider nzOrientation="left" nzText="Foot Work"></nz-divider>
-
-    <nz-divider nzOrientation="left" nzText="Power"></nz-divider>
-
-    <nz-divider nzOrientation="left" nzText="Musicality"></nz-divider>
+      </nz-collapse-panel>
+    </nz-collapse>
   </nz-card>
 </div>
