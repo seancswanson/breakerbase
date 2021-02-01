@@ -267,10 +267,6 @@ p
     height: 100%;
     margin: 0 auto;
     padding: 20px 0;
-
-    background: url('https://www.transparenttextures.com/patterns/subtle-dots.png')
-    center center repeat;
-    background-size: 30px;
 }
 
 .ant-collapse-content-box
@@ -288,6 +284,7 @@ p
 .ant-collapse-header
 {
     font-family: archivo;
+    font-size: 20px;
 
     text-transform: uppercase;
 
