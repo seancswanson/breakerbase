@@ -9,11 +9,11 @@
       </h2>
       <nz-collapse-panel
         #p
-        *ngFor="let panel of panels; let isFirst = first"
+        *ngFor="let panel of panels; let isFirst = first; index as i"
         [nzHeader]="panel.name"
         [nzActive]="panel.active"
       >
-        <h3>{{ panel.subtitle }}</h3>
+        <h3 class="section-subtitle">{{ panel.subtitle }}</h3>
         <p *ngIf="panel.subtitleCredit === 'redbull'">
           From RedBull's
           <a
@@ -33,7 +33,7 @@
 
         <div class="scroll-container">
           <div class="videos-container">
-            <div class="video-wrapper" *ngFor="let video of videos">
+            <div class="video-wrapper" *ngFor="let video of videos[i]">
               <h2 class="video-title">{{ video.title }}</h2>
               <div class="iframe-wrapper">
                 <iframe

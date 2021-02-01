@@ -272,18 +272,32 @@ p
     center center repeat;
     background-size: 30px;
 }
-nzcollapsepanel
+
+.ant-collapse-content-box
 {
-    &.ant-collapse-item
-    {
-        margin-bottom: 5px;
+    padding-top: 10px !important;
+}
 
-        border-bottom: none;
-    }
+.ant-collapse-item
+{
+    margin-bottom: 8px;
 
-    .ant-collapse-header
-    {
-        color: #fff;
-        background: #313131;
-    }
+    border-bottom: none !important;
+}
+
+.ant-collapse-header
+{
+    font-family: archivo;
+
+    text-transform: uppercase;
+
+    border: 1px dotted #e8e8e8;
+    border-radius: 3px;
+}
+
+.ant-card-head-title
+{
+    font-family: archivo;
+
+    text-transform: uppercase;
 }

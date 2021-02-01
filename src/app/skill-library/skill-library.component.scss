@@ -3,6 +3,17 @@
     position: relative;
 
     overflow: scroll;
+
+    @media (max-width: 600px)
+    {
+        overflow-x: hidden; /* Hide vertical scrollbar */
+        overflow-y: hidden; /* Hide vertical scrollbar */
+    }
+
+    @media (min-width: 601px)
+    {
+        overflow-y: hidden; /* Hide vertical scrollbar */
+    }
 }
 
 .videos-container
@@ -21,6 +32,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    justify-content: space-between;
 
     min-width: 200px;
     max-width: 500px;
@@ -65,4 +77,9 @@
 
     width: 100%;
     height: 100%;
+}
+
+.section-subtitle
+{
+    padding: 10px 0;
 }
